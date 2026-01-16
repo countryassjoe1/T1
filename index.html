@@ -1,0 +1,546 @@
+.card {
+      background: var(--card);
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      padding: 16px 16px 14px;
+      position: relative;
+      overflow: hidden;
+    }
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top left, rgba(255,122,60,0.12), transparent 55%);
+      opacity: 0;
+      transition: opacity 0.2s ease-out;
+      pointer-events: none;
+    }
+    .card:hover::before {
+      opacity: 1;
+    }
+    .card-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+    .card h3 {
+      font-size: 16px;
+      margin-bottom: 6px;
+    }
+    .card p {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .card ul {
+      list-style: none;
+      margin-top: 4px;
+    }
+    .card li {
+      font-size: 13px;
+      color: var(--fg);
+      margin-bottom: 4px;
+    }
+    .card li span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    /* Timeline / process */
+    .timeline {
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: linear-gradient(135deg, #050716, #02030a);
+      padding: 16px 16px 10px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 18px;
+    }
+    .timeline-steps {
+      border-left: 1px solid rgba(155,155,168,0.4);
+      padding-left: 14px;
+      margin-left: 4px;
+    }
+    .step {
+      position: relative;
+      margin-bottom: 12px;
+      padding-left: 10px;
+    }
+    .step::before {
+      content: "";
+      position: absolute;
+      left: -15px;
+      top: 4px;
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 10px rgba(255,122,60,0.8);
+    }
+    .step-title {
+      font-size: 13px;
+      font-weight: 500;
+    }
+    .step-body {
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .timeline-meta {
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .timeline-meta strong {
+      color: var(--fg);
+    }
+    .timeline-meta code {
+      font-family: var(--mono);
+      font-size: 11px;
+      background: rgba(5,7,22,0.9);
+      padding: 2px 5px;
+      border-radius: 6px;
+      border: 1px solid rgba(38,38,58,0.9);
+    }
+
+    /* Case studies */
+    .case-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 18px;
+    }
+    .case-tag {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+    .case-title {
+      font-size: 16px;
+      margin-bottom: 6px;
+    }
+    .case-body {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+    .case-metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 10px;
+    }
+    .metric {
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: rgba(5,7,22,0.9);
+      padding: 8px 10px;
+      font-size: 12px;
+    }
+    .metric strong {
+      display: block;
+      font-size: 13px;
+    }
+
+    /* Contact */
+    .contact {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 18px;
+    }
+    .contact-card {
+      background: var(--card);
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      padding: 16px;
+    }
+    .contact-card h3 {
+      font-size: 16px;
+      margin-bottom: 6px;
+    }
+    .contact-card p {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+    .contact-list {
+      list-style: none;
+      font-size: 13px;
+      color: var(--fg);
+    }
+    .contact-list li {
+      margin-bottom: 6px;
+    }
+    .contact-list span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .contact-form {
+      display: grid;
+      gap: 10px;
+      font-size: 13px;
+    }
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .field label {
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .field input,
+    .field textarea {
+      background: #050716;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      padding: 8px 9px;
+      color: var(--fg);
+      font-family: var(--font);
+      font-size: 13px;
+    }
+    .field input:focus,
+    .field textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px rgba(255,122,60,0.4);
+    }
+    .field textarea {
+      min-height: 90px;
+      resize: vertical;
+    }
+
+    /* Footer */
+    .footer {
+      padding-top: 18px;
+      font-size: 12px;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    /* Responsive */
+    @media (max-width: 880px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .hero-visual {
+        order: -1;
+      }
+      .timeline,
+      .case-grid,
+      .contact {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+    @media (max-width: 720px) {
+      .nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .nav-links {
+        width: 100%;
+        justify-content: space-between;
+      }
+      .hero-title {
+        font-size: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <div class="nav-left">
+        <div class="logo-mark"></div>
+        <div class="logo-text">T1 Solutions</div>
+      </div>
+      <nav class="nav-links">
+        <a href="#systems">Systems</a>
+        <a href="#process">Process</a>
+        <a href="#cases">Work</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="nav-cta" href="#contact">
+        Engage
+        <span>Architecture, not ad hoc fixes</span>
+      </a>
+    </div>
+  </header>
+
+  <div class="page">
+    <section class="hero" id="top">
+      <div>
+        <div class="hero-kicker">Systems architecture for the next decade</div>
+        <h1 class="hero-title">
+          Architecture for <span>assets, identity, and time</span>.
+        </h1>
+        <p class="hero-sub">
+          T1 Solutions designs and deploys systems that still make sense ten years from now—digital,
+          physical, and financial. Continuity, not chaos. Infrastructure, not vibes.
+        </p>
+        <div class="hero-meta">
+          <div class="hero-meta-item">Continuity systems for founders, funds, and operators</div>
+          <div class="hero-meta-item">Time-based asset protocols & automation pipelines</div>
+          <div class="hero-meta-item">Documentation built for humans and future AIs</div>
+        </div>
+        <div class="hero-cta-row">
+          <a class="btn-primary" href="mailto:you@t1solutions.com?subject=Working%20with%20T1%20Solutions">
+            Work with T1
+          </a>
+          <a class="btn-ghost" href="#systems">View systems map</a>
+          <div class="hero-note">
+            Send a short note with what you’re building and why now.
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hero-orbit"></div>
+        <div class="hero-core"></div>
+        <div class="hero-chip chip-1">
+          <strong>Codex Architecture</strong>
+          <span>volume_1: identity, continuity, AI_reload</span>
+        </div>
+        <div class="hero-chip chip-2">
+          <strong>TenYearsNFT Protocol</strong>
+          <span>duration_economics = true; staking = false;</span>
+        </div>
+        <div class="hero-chip chip-3">
+          <strong>Automation Layer</strong>
+          <span>air + weekly_distributor → multi_chain</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="systems">
+      <div class="section-header">
+        <div>
+          <div class="section-kicker">Systems</div>
+          <div class="section-title">What T1 Solutions actually builds.</div>
+        </div>
+        <div class="section-sub">
+          Not one-off projects. Systems that can be handed off, audited, and extended—by teams, successors,
+          or future AIs.
+        </div>
+      </div>
+
+      <div class="grid-3">
+        <article class="card">
+          <div class="card-label">Continuity</div>
+          <h3>Codex Systems</h3>
+          <p>
+            Multi-volume operating manuals that capture identity, decision-making, and operational logic
+            in a form that can be reloaded.
+          </p>
+          <ul>
+            <li><strong>Identity layer</strong> — <span>how you think, not just what you do.</span></li>
+            <li><strong>AI reload protocol</strong> — <span>future AIs can align to your map.</span></li>
+            <li><strong>Continuity playbooks</strong> — <span>for successors, partners, and desks.</span></li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="card-label">Assets</div>
+          <h3>Time-Based Asset Protocols</h3>
+          <p>
+            Digital asset systems where duration—not hype—is the engine of value. Staking without staking,
+            time as collateral.
+          </p>
+          <ul>
+            <li><strong>TenYearsNFT</strong> — <span>duration-driven NFT protocol.</span></li>
+            <li><strong>Gold tiers</strong> — <span>designed for long-horizon holders.</span></li>
+            <li><strong>Canonical metadata</strong> — <span>IPFS-ready, deterministic, auditable.</span></li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="card-label">Automation</div>
+          <h3>Distribution & Execution Pipelines</h3>
+          <p>
+            Infrastructure that moves value and information on schedule, across chains and systems, with
+            minimal operator overhead.
+          </p>
+          <ul>
+            <li><strong>AIR + WeeklyDistributor</strong> — <span>multi-chain, automated flows.</span></li>
+            <li><strong>Deterministic workflows</strong> — <span>same result, every run.</span></li>
+            <li><strong>Hardware-aware design</strong> — <span>AMD, CPU-only, or cloud pipelines.</span></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="process">
+      <div class="section-header">
+        <div>
+          <div class="section-kicker">Process</div>
+          <div class="section-title">How architecture goes from idea to infrastructure.</div>
+        </div>
+        <div class="section-sub">
+          Every engagement follows a clear path: map, design, deploy, document. No black boxes, no mystery.
+        </div>
+      </div>
+
+      <div class="timeline">
+        <div>
+          <div class="section-kicker" style="margin-bottom:6px;">Phases</div>
+          <div class="timeline-steps">
+            <div class="step">
+              <div class="step-title">01 — Mapping the system</div>
+              <div class="step-body">
+                We define the boundary: what the system touches, who it serves, and what “ten years from now”
+                needs to look like.
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-title">02 — Architecture & object model</div>
+              <div class="step-body">
+                Entities, flows, contracts, and failure modes are modeled. This is where Codex chapters and
+                protocol specs take shape.
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-title">03 — Implementation & automation</div>
+              <div class="step-body">
+                Contracts, pipelines, and workflows are implemented with a bias toward determinism and low
+                dependency surfaces.
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-title">04 — Documentation & continuity</div>
+              <div class="step-body">
+                Everything is documented so a future operator—or AI—can step in without guesswork.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-meta">
+          <p style="margin-bottom:8px;">
+            <strong>Engagement format</strong><br />
+            Projects are scoped around systems, not hours. You get a defined architecture, a working
+            implementation, and a continuity artifact.
+          </p>
+          <p style="margin-bottom:8px;">
+            <strong>Deliverables</strong><br />
+            <code>architecture_map.json</code>, protocol specs, implementation, and a Codex-style narrative
+            that explains how the system behaves over time.
+          </p>
+          <p>
+            <strong>Who this works best for</strong><br />
+            Founders, funds, and operators who want their systems to be legible, transferable, and
+            defensible.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="cases">
+      <div class="section-header">
+        <div>
+          <div class="section-kicker">Work</div>
+          <div class="section-title">Examples of systems that have already shipped.</div>
+        </div>
+        <div class="section-sub">
+          Names and details can be anonymized, but the pattern is the same: architecture first, then execution.
+        </div>
+      </div>
+
+      <div class="case-grid">
+        <div>
+          <div class="case-tag">Case Study — Digital Asset Protocol</div>
+          <div class="case-title">TenYearsNFT: Time as the value engine.</div>
+          <div class="case-body">
+            A duration-based NFT protocol designed to reward patience instead of churn. Holders commit to
+            time, not lockups, and the system tracks and rewards that behavior.
+          </div>
+          <ul class="contact-list" style="margin-bottom:10px;">
+            <li><strong>Scope:</strong> <span>Protocol design, contract architecture, metadata, image pipeline, documentation.</span></li>
+            <li><strong>Outcome:</strong> <span>a fully specified, deployable system with canonical IPFS structure and deterministic generation.</span></li>
+          </ul>
+          <p class="case-body">
+            This protocol is built as a legacy artifact—something that can be audited, forked, and extended
+            years from now without losing the original intent.
+          </p>
+        </div>
+        <div class="case-metrics">
+          <div class="metric">
+            <strong>10+ year horizon</strong>
+            Designed explicitly around long-term holding behavior and continuity.
+          </div>
+          <div class="metric">
+            <strong>Deterministic assets</strong>
+            Metadata and images are locked to canonical CIDs and generation rules.
+          </div>
+          <div class="metric">
+            <strong>Protocol clarity</strong>
+            Every mechanic is documented in Codex-style narrative and technical form.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="section-header">
+        <div>
+          <div class="section-kicker">Contact</div>
+          <div class="section-title">If you’re building something that needs to last.</div>
+        </div>
+        <div class="section-sub">
+          A short, clear message beats a pitch deck. Tell me what you’re building, what breaks if it fails,
+          and why now.
+        </div>
+      </div>
+
+      <div class="contact">
+        <div class="contact-card">
+          <h3>How to engage T1 Solutions</h3>
+          <p>
+            I work with a small number of builders and operators at a time. If your system has real
+            consequences—financial, operational, or reputational—I’m interested.
+          </p>
+          <ul class="contact-list">
+            <li><strong>Email:</strong> <a href="mailto:you@t1solutions.com">you@t1solutions.com</a></li>
+            <li><strong>What to include:</strong> <span>what you’re building, time horizon, and where the current system breaks.</span></li>
+            <li><strong>Ideal fit:</strong> <span>founders, funds, and operators who think in decades, not quarters.</span></li>
+          </ul>
+        </div>
+        <div class="contact-card">
+          <h3>Send a structured brief</h3>
+          <p>Use this as a template for your first message.</p>
+          <form class="contact-form" onsubmit="return false;">
+            <div class="field">
+              <label>Your name</label>
+              <input type="text" placeholder="Name or entity" />
+            </div>
+            <div class="field">
+              <label>What are you building?</label>
+              <textarea placeholder="Describe the system in 3–5 sentences."></textarea>
+            </div>
+            <div class="field">
+              <label>Time horizon</label>
+              <input type="text" placeholder="e.g. 3–10 years, multi-cycle, generational" />
+            </div>
+            <div class="field">
+              <label>Where does it break today?</label>
+              <textarea placeholder="Failure modes, bottlenecks, or continuity risks."></textarea>
+            </div>
+            <button class="btn-primary" type="button" onclick="window.location.href='mailto:you@t1solutions.com'">
+              Copy this into an email
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>© <span id="year"></span> T1 Solutions — Systems architecture for things that need to last.</div>
+      <div><a href="#top">Back to top</a></div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
